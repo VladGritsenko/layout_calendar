@@ -6,7 +6,8 @@
   grid-template-columns: repeat(7, $cell-size);
   grid-template-rows: repeat(6, $cell-size);
   grid-gap: 1px;
-  color: black;
+  width: 707px;
+  margin: 50px auto;
 }
   
 .calendar > div {

@@ -3,7 +3,8 @@
   grid-template-columns: repeat(7, 100px);
   grid-template-rows: repeat(6, 100px);
   grid-gap: 1px;
-  color: black; }
+  width: 707px;
+  margin: 50px auto; }
 
 .calendar > div {
   display: -webkit-box;
