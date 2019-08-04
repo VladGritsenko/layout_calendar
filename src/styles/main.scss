@@ -1,7 +1,32 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import "./utils/vars";
+@import "./utils/mixins";
 
-body {
-  background: $c-gray;
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, $cell-size);
+  grid-template-rows: repeat(6, $cell-size);
+  grid-gap: 1px;
+  color: black;
 }
+  
+.calendar > div {
+  @include cell-position;
+  
+  border: 1px solid black;
+  background-color: $cell-bgc;
+  transition: all 0.5s linear;
+
+  @include cell-font;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $hover-bgc;
+    transform: translateY(-20px);
+  }
+}
+
+@include day-counter;
+
+@include mounth-start;
+
+@include num-of-days;

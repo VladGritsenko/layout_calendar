@@ -1,6 +1,34 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin cell-font {
+  font-family: $cell-ff, sans-serif;
+  font-size: $sell-fsz;
+}
+
+@mixin day-counter {
+  @for $i from 1 through 31 {
+    .calendar div:nth-child(#{$i})::after {
+      content: "#{$i}";
+    }
+  }
+}
+
+@mixin cell-position {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin mounth-start {
+  @for $n from 1 through length($days) {
+    .calendar-#{nth($days, $n)} div:first-child {
+      grid-column-start: #{$n};
+    }
+  }
+}
+
+@mixin num-of-days {
+  @for $d from 28 through 31 {
+    .calendar-#{$d} div:nth-child(#{$d}) ~ div {
+      display: none;
+    }
   }
 }
